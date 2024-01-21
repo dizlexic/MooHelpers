@@ -7,14 +7,14 @@
 
 import Foundation
 
-open class ObservableVM: Initializable
+open class MooObservable: Initializable
 {
     required public init()
     {
     }
 }
 
-extension ObservableVM: Creatable
+extension MooObservable: Creatable
 {
     @objc
     open class func create() -> Self {
@@ -22,23 +22,23 @@ extension ObservableVM: Creatable
     }
 }
 
-extension ObservableVM: Identifiable
+extension MooObservable: Identifiable
 {
     public var id: ObjectIdentifier {
         ObjectIdentifier(self)
     }
 }
 
-extension ObservableVM: CustomStringConvertible
+extension MooObservable: CustomStringConvertible
 {
     public var description: String {
         self.id.debugDescription
     }
 }
 
-extension ObservableVM: Hashable
+extension MooObservable: Hashable
 {
-    public static func == (lhs: ObservableVM, rhs: ObservableVM) -> Bool {
+    public static func == (lhs: MooObservable, rhs: MooObservable) -> Bool {
         lhs.hashValue == rhs.hashValue
     }
     
